@@ -1,4 +1,4 @@
-package com.example.poetrydb
+package com.example.poetrydb.viewModel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -11,6 +11,10 @@ class PoetryViewModel : ViewModel() {
     private val poetRepo = PoetryRepositoryImpl().getPoetryAuthData()
     val authorLiveDataSuccess = MutableLiveData<AuthorModel>()
     val authorLiveDataError = MutableLiveData<String>()
+
+    fun getData(): MutableLiveData<AuthorModel> {
+        return authorLiveDataSuccess
+    }
 
     fun getRepoPoetryByAuth() {
         compositeDisposable.add(

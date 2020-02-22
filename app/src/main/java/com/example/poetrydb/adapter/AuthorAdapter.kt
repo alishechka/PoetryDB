@@ -1,10 +1,12 @@
-package com.example.poetrydb
+package com.example.poetrydb.adapter
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.poetrydb.R
 import com.example.poetrydb.model.AuthorModel
+import com.example.poetrydb.onItemClick
 import kotlinx.android.synthetic.main.author_item.view.*
 
 class AuthorAdapter(
@@ -15,7 +17,7 @@ class AuthorAdapter(
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int)
-            : AuthorAdapter.AuthorViewHolder {
+            : AuthorViewHolder {
         return AuthorViewHolder(
             LayoutInflater.from(parent.context).inflate(
                 R.layout.author_item,
@@ -29,7 +31,7 @@ class AuthorAdapter(
         return models.authors.size
     }
 
-    override fun onBindViewHolder(holder: AuthorAdapter.AuthorViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: AuthorViewHolder, position: Int) {
         holder.testText.text = models.authors[position]
         holder.bind(models.authors[position], itemClick)
     }

@@ -4,19 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
-
-    <EditText
-        android:id="@+id/et_search"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="30dp"
-        app:layout_constraintTop_toTopOf="parent" />
+    tools:context=".PoemActivity">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_display"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/et_search" />
+        android:layout_height="match_parent"
+        android:id="@+id/rv_title_by_Author"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
