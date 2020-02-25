@@ -1,5 +1,6 @@
 package com.example.poetrydb.adapter
 
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -28,7 +29,7 @@ class AuthorAdapter(
     }
 
     override fun getItemCount(): Int {
-        return models.authors.size
+        return 10
     }
 
     override fun onBindViewHolder(holder: AuthorViewHolder, position: Int) {
@@ -38,6 +39,7 @@ class AuthorAdapter(
 
     class AuthorViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val testText = itemView.tv_test
+
 
         fun bind(author: String, onItemClick: onItemClick) {
             itemView.setOnClickListener{onItemClick.clickedItem(author)}

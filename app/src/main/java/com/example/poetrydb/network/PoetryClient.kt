@@ -10,8 +10,8 @@ import retrofit2.http.Query
 
 interface PoetryClient {
     //is an Object
-    @GET(END_POINT_AUTHOR)
-    fun getByAuthor(): Observable<AuthorModel>
+    @GET(END_POINT_AUTHOR+"/{author}")
+    fun getByAuthor(@Path("author") author: String="author"): Observable<AuthorModel>
 
     //is a List
     @GET(END_POINT_AUTHOR + "/{author}")

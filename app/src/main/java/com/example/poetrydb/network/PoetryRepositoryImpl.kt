@@ -9,12 +9,12 @@ import io.reactivex.schedulers.Schedulers
 
 class PoetryRepositoryImpl : PoetryRepository {
     private val client = PoetryRetrofitClient.getRetrofitInstance
-    private val callAuthor = client.getByAuthor()
+//    private val callAuthor = client.getByAuthor()
 
     private val callTitleByAuthor = client.getTitleByAuthor(TEST_VAL)
 
-    override fun getPoetryAuthData(): Observable<AuthorModel> {
-        return callAuthor.subscribeOn(Schedulers.io())
+    override fun getPoetryAuthData(typedAuthorString: String): Observable<AuthorModel> {
+        return client.getByAuthor(typedAuthorString).subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
     }
 
