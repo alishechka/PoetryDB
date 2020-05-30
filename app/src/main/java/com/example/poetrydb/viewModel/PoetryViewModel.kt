@@ -12,9 +12,9 @@ class PoetryViewModel : ViewModel() {
     val authorLiveDataSuccess = MutableLiveData<AuthorModel>()
     val authorLiveDataError = MutableLiveData<String>()
 
-    fun getData(): MutableLiveData<AuthorModel> {
-        return authorLiveDataSuccess
-    }
+//    fun getData(): MutableLiveData<AuthorModel> {
+//        return authorLiveDataSuccess
+//    }
 
     fun getRepoPoetryByAuth() {
         compositeDisposable.add(

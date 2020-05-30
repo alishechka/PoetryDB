@@ -11,15 +11,15 @@ class PoetryRepositoryImpl : PoetryRepository {
     private val client = PoetryRetrofitClient.getRetrofitInstance
     private val callAuthor = client.getByAuthor()
 
-    private val callTitleByAuthor = client.getTitleByAuthor(TEST_VAL)
+//    private val callTitleByAuthor = client.getTitleByAuthor(TEST_VAL)
 
     override fun getPoetryAuthData(): Observable<AuthorModel> {
         return callAuthor.subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
     }
 
-    override fun getTitleByAuthor(): Observable<List<TitleByAuthorModel>> {
-        return callTitleByAuthor.subscribeOn(Schedulers.io())
-            .observeOn(AndroidSchedulers.mainThread())
-    }
+//    override fun getTitleByAuthor(): Observable<List<TitleByAuthorModel>> {
+//        return callTitleByAuthor.subscribeOn(Schedulers.io())
+//            .observeOn(AndroidSchedulers.mainThread())
+//    }
 }

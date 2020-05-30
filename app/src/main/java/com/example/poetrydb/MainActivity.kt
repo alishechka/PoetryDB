@@ -24,15 +24,17 @@ class MainActivity : AppCompatActivity(), onItemClick {
         viewModel.authorLiveDataSuccess.observe(this, Observer {
             rv_display.adapter = AuthorAdapter(it, this)
             rv_display.layoutManager = LinearLayoutManager(this)
-
+        })
+        viewModel.authorLiveDataError.observe(this, Observer {
+            test_text.text=it
         })
 
     }
 
     override fun clickedItem(s: String) {
-        val intent = Intent(this, PoemActivity::class.java)
-//        intent.putExtra(AUTHOR_NAME,s)
-        TEST_VAL = s
-        startActivity(intent)
+//        val intent = Intent(this, PoemActivity::class.java)
+////        intent.putExtra(AUTHOR_NAME,s)
+//        TEST_VAL = s
+//        startActivity(intent)
     }
 }
