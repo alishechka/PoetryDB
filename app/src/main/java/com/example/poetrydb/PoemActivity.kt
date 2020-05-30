@@ -15,12 +15,12 @@ class PoemActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_poem)
 
-//        val viewModel = ViewModelProvider(this).get(TitleByAuthorViewModel::class.java)
-//        viewModel.getRepoTitleByAuthor()
-//        viewModel.titleLiveDataSuccess.observe(this, Observer {
-//            rv_title_by_Author.adapter = TitleByAuthorAdapter(it)
-//            rv_title_by_Author.layoutManager = LinearLayoutManager(this)
-//        })
+        val viewModel = ViewModelProvider(this).get(TitleByAuthorViewModel::class.java)
+        viewModel.getRepoTitleByAuthor()
+        viewModel.titleLiveDataSuccess.observe(this, Observer {
+            rv_title_by_Author.adapter = TitleByAuthorAdapter(it)
+            rv_title_by_Author.layoutManager = LinearLayoutManager(this)
+        })
 
     }
 }

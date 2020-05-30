@@ -7,5 +7,5 @@ import io.reactivex.Observable
 interface PoetryRepository {
 
     fun getPoetryAuthData(): Observable<AuthorModel>
-//    fun getTitleByAuthor(): Observable<List<TitleByAuthorModel>>
+    fun getTitleByAuthor(): Observable<List<TitleByAuthorModel>>
 }

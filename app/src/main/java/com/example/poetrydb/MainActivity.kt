@@ -32,9 +32,9 @@ class MainActivity : AppCompatActivity(), onItemClick {
     }
 
     override fun clickedItem(s: String) {
-//        val intent = Intent(this, PoemActivity::class.java)
-////        intent.putExtra(AUTHOR_NAME,s)
-//        TEST_VAL = s
-//        startActivity(intent)
+        val intent = Intent(this, PoemActivity::class.java)
+        intent.putExtra(AUTHOR_NAME,s)
+        TEST_VAL = s
+        startActivity(intent)
     }
 }
