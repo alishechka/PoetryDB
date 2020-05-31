@@ -6,7 +6,7 @@ import com.example.poetrydb.model.AuthorModel
 import com.example.poetrydb.network.PoetryRepositoryImpl
 import io.reactivex.disposables.CompositeDisposable
 
-class PoetryViewModel : ViewModel() {
+class AuthorViewModel : ViewModel() {
     private val compositeDisposable = CompositeDisposable()
     private val poetRepo = PoetryRepositoryImpl().getPoetryAuthData()
     val authorLiveDataSuccess = MutableLiveData<AuthorModel>()
