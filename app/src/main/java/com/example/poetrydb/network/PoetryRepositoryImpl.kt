@@ -1,5 +1,6 @@
 package com.example.poetrydb.network
 
+import com.example.poetrydb.AUTHOR_NAME
 import com.example.poetrydb.TEST_VAL
 import com.example.poetrydb.model.AuthorModel
 import com.example.poetrydb.model.TitleByAuthorModel
@@ -11,15 +12,15 @@ class PoetryRepositoryImpl : PoetryRepository {
     private val client = PoetryRetrofitClient.getRetrofitInstance
     private val callAuthor = client.getByAuthor()
 
-    private val callTitleByAuthor = client.getTitleByAuthor(TEST_VAL)
+    private val callTitleByAuthor = client.getTitleByAuthor(AUTHOR_NAME)
 
     override fun getPoetryAuthData(): Observable<AuthorModel> {
         return callAuthor.subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
     }
 
-    override fun getTitleByAuthor(): Observable<List<TitleByAuthorModel>> {
-        return callTitleByAuthor.subscribeOn(Schedulers.io())
+    override fun getTitleByAuthor(author:String): Observable<List<TitleByAuthorModel>> {
+        return client.getTitleByAuthor(author).subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
     }
 }

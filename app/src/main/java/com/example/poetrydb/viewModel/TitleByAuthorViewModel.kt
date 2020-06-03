@@ -8,14 +8,14 @@ import io.reactivex.disposables.CompositeDisposable
 
 class TitleByAuthorViewModel : ViewModel() {
     private val compositeDisposable = CompositeDisposable()
-    private val titleRepo = PoetryRepositoryImpl().getTitleByAuthor()
+//    private val titleRepo = PoetryRepositoryImpl().getTitleByAuthor()
     val titleLiveDataSuccess = MutableLiveData<List<TitleByAuthorModel>>()
     val titleLiveDataError = MutableLiveData<String>()
 
 
-    fun getRepoTitleByAuthor() {
+    fun getRepoTitleByAuthor(author:String) {
         compositeDisposable.add(
-            titleRepo.subscribe({ i ->
+            PoetryRepositoryImpl().getTitleByAuthor(author).subscribe({ i ->
                 titleLiveDataSuccess.value = i
             }, { e -> titleLiveDataError.value = e.message })
         )

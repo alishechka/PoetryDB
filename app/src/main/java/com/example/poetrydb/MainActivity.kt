@@ -31,6 +31,7 @@ class MainActivity : AppCompatActivity() {
 
     private inner class ScreenSlidePagerAdapter(fragmentActivity: FragmentActivity) :
         FragmentStateAdapter(fragmentActivity) {
+
         override fun getItemCount(): Int = 2 //because I have two Fragments
 
         override fun createFragment(position: Int): Fragment = if (position == 0) {
